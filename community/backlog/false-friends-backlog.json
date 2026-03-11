@@ -483,7 +483,7 @@
     "example": "新しい料理にチャレンジしてみる。",
     "id": 54,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -492,7 +492,7 @@
     "example": "彼はチームのナンバー1だ。",
     "id": 55,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ハイテンション (haitenshon)",
@@ -501,7 +501,7 @@
     "example": "試合前はみんなハイテンションだった。",
     "id": 56,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "イメージ (imeeji)",
@@ -509,7 +509,7 @@
     "explanation": "Often means impression/public image. (Set 3)",
     "example": "会社のイメージが良くなった。",
     "id": 57,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
