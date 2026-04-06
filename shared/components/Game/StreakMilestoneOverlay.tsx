@@ -141,6 +141,67 @@ export default function StreakMilestoneOverlay({
     generateFloatingKanji();
   }, [milestone]);
 
+  // Handle viewport resize - regenerate positions dynamically
+  useEffect(() => {
+    if (!milestone || floatingKanji.length === 0) return;
+
+    const handleResize = () => {
+      // Get new viewport dimensions
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      // Get responsive character size
+      const responsiveCharSize = getResponsiveCharSize(viewportWidth);
+
+      // Update size class for rendering
+      if (viewportWidth < 768) {
+        setCharSize('sm');
+      } else if (viewportWidth < 1024) {
+        setCharSize('md');
+      } else {
+        setCharSize('lg');
+      }
+
+      // Get exclusion zone (central content area)
+      const exclusionZone = getExclusionZone(viewportWidth, viewportHeight);
+
+      // Create seeded random number generator for consistent results
+      const rng = new Random();
+
+      // Generate new random positions for current viewport
+      const newPositions = generateRandomPositions(
+        milestone,
+        viewportWidth,
+        viewportHeight,
+        responsiveCharSize,
+        exclusionZone,
+        rng,
+      );
+
+      // Update positions while keeping existing styles
+      setFloatingKanji(prevKanji =>
+        prevKanji.map((kanji, index) => ({
+          ...kanji,
+          position: newPositions[index],
+        })),
+      );
+    };
+
+    // Debounce resize handler
+    let resizeTimeout: NodeJS.Timeout;
+    const debouncedHandleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(handleResize, 150);
+    };
+
+    window.addEventListener('resize', debouncedHandleResize);
+
+    return () => {
+      window.removeEventListener('resize', debouncedHandleResize);
+      clearTimeout(resizeTimeout);
+    };
+  }, [milestone, floatingKanji.length]);
+
   useEffect(() => {
     if (!milestone) return;
 

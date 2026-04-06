@@ -41,6 +41,14 @@ const FloatingKanji = memo(
     return (
       <motion.span
         variants={kanjiVariants}
+        animate={{
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+        }}
+        transition={{
+          left: { type: 'spring', stiffness: 100, damping: 20 },
+          top: { type: 'spring', stiffness: 100, damping: 20 },
+        }}
         className={cn(
           'pointer-events-none fixed inline-flex items-center justify-center select-none',
           sizeClass,
@@ -49,8 +57,6 @@ const FloatingKanji = memo(
         )}
         aria-hidden='true'
         style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
           color: color,
           zIndex: -10,
           transform: 'translate(-50%, -50%)', // Center the character on the position

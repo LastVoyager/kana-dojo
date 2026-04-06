@@ -282,6 +282,36 @@ This prevents all characters from floating in unison, creating a more organic, n
 | Tablet (768-1023px) | `md`       | 30px       | `text-3xl`     |
 | Desktop (≥1024px)   | `lg`       | 36px       | `text-4xl`     |
 
+### Dynamic Position Updates
+
+The floating kanji positions are **dynamically recalculated** when the viewport is resized:
+
+**Initial Load:**
+
+1. Positions calculated based on current viewport dimensions
+2. Characters fade in with stagger effect
+
+**On Resize:**
+
+1. Viewport dimensions detected
+2. New positions calculated for current viewport size
+3. Characters smoothly transition to new positions using spring animation
+4. Character size and personal radius adjust automatically
+
+**Transition Animation:**
+
+- Type: Spring physics
+- Stiffness: 100
+- Damping: 20
+- Duration: ~0.5-1s (physics-based)
+
+This ensures characters remain visible and properly distributed regardless of viewport changes, including:
+
+- Desktop → Mobile (characters reposition to fit smaller viewport)
+- Mobile → Desktop (characters spread out to fill larger viewport)
+- Window resizing (smooth, continuous repositioning)
+- Device rotation (landscape ↔ portrait)
+
 ### Spacing Adjustments
 
 Smaller viewports get tighter spacing to prevent overcrowding:
@@ -353,19 +383,27 @@ const delay = rng.real(0, 3); // 0-3 seconds
 - Prevents recalculation on re-renders
 - Only recalculates when milestone changes
 
-### 3. GPU Acceleration
+### 3. Viewport Resize Handling
+
+- Resize events are debounced (150ms delay)
+- Positions recalculated only after resize completes
+- Smooth spring animations prevent jarring transitions
+- Character styles (color, font) preserved during resize
+- Only positions update, avoiding expensive re-renders
+
+### 4. GPU Acceleration
 
 - Uses CSS transforms for animations
 - `translateY()` is GPU-accelerated
 - Smooth 60fps animations
 
-### 4. Lazy Loading
+### 5. Lazy Loading
 
 - Kanji data loaded only when overlay appears
 - Async loading doesn't block UI
 - Graceful handling of loading states
 
-### 5. Component Optimization
+### 6. Component Optimization
 
 - `FloatingKanji` wrapped in `memo()`
 - Prevents unnecessary re-renders
@@ -390,6 +428,8 @@ const delay = rng.real(0, 3); // 0-3 seconds
 - ✅ Tablet landscape (1024x768)
 - ✅ Desktop (1920x1080)
 - ✅ Ultra-wide (2560x1440)
+- ✅ Dynamic resize (desktop → mobile → desktop)
+- ✅ Device rotation (portrait ↔ landscape)
 
 ### Edge Cases
 
