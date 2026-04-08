@@ -5,7 +5,11 @@ import { FileDiff } from 'lucide-react';
 
 const PatchNotes = () => {
   return (
-    <LegalLayout icon={<FileDiff className='size-6' />} title='Patch Notes'>
+    <LegalLayout
+      icon={<FileDiff className='size-6' />}
+      title='Patch Notes'
+      lastUpdated='April 8, 2026'
+    >
       <div className='space-y-8'>
         {patchNotesData.map((patch, index) => (
           <div key={index}>

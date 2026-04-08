@@ -8,6 +8,7 @@ const TermsOfService = () => {
     <LegalLayout
       icon={<ScrollText className='size-6' />}
       title='Terms of Service'
+      lastUpdated='April 8, 2026'
     >
       <PostWrapper textContent={termsOfService} />
     </LegalLayout>

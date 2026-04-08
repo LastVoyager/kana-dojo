@@ -5,7 +5,11 @@ import { Cookie } from 'lucide-react';
 
 const PrivacyPolicy = () => {
   return (
-    <LegalLayout icon={<Cookie className='size-6' />} title='Privacy Policy'>
+    <LegalLayout
+      icon={<Cookie className='size-6' />}
+      title='Privacy Policy'
+      lastUpdated='April 8, 2026'
+    >
       <PostWrapper textContent={privacyPolicy} />
     </LegalLayout>
   );

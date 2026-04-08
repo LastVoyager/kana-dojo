@@ -46,6 +46,7 @@ export default function AboutPage() {
     <LegalLayout
       icon={<CircleHelp className='size-6' />}
       title='About KanaDojo'
+      lastUpdated='April 8, 2026'
     >
       <p className='mb-8 text-xl text-(--secondary-color)'>
         A modern, free platform for learning Japanese characters and vocabulary

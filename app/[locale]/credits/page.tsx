@@ -119,6 +119,7 @@ export default function CreditsPage() {
     <LegalLayout
       icon={<Sparkle className='size-6' />}
       title='Credits & Data Sources'
+      lastUpdated='April 8, 2026'
     >
       <p className='mb-8 text-lg text-(--secondary-color)'>
         KanaDojo is built on trusted Japanese language data sources and

@@ -10,9 +10,15 @@ interface LegalLayoutProps {
   children: React.ReactNode;
   icon?: React.ReactNode;
   title?: string;
+  lastUpdated?: string;
 }
 
-const LegalLayout = ({ children, icon, title }: LegalLayoutProps) => {
+const LegalLayout = ({
+  children,
+  icon,
+  title,
+  lastUpdated,
+}: LegalLayoutProps) => {
   const { playClick } = useClick();
 
   return (
@@ -27,7 +33,6 @@ const LegalLayout = ({ children, icon, title }: LegalLayoutProps) => {
               'bg-(--secondary-color) text-(--background-color) hover:bg-(--main-color)',
               'border-b-8 border-(--secondary-color-accent) hover:border-(--main-color-accent)',
               'transition-all duration-200',
-              'active:mb-[6px] active:translate-y-[6px] active:border-b-0',
               'cursor-pointer',
             )}
           >
@@ -36,13 +41,20 @@ const LegalLayout = ({ children, icon, title }: LegalLayoutProps) => {
         </Link>
         <article className='mt-8'>
           {icon && title && (
-            <div className='mb-6 flex items-center gap-3'>
-              <span className='motion-safe:animate-float inline-flex h-12 w-12 items-center justify-center rounded-2xl border-b-8 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) [animation-delay:200ms]'>
-                {icon}
-              </span>
-              <h1 className='text-4xl font-bold text-(--main-color)'>
-                {title}
-              </h1>
+            <div className='mb-2'>
+              <div className='mb-3 flex items-center gap-3'>
+                <span className='motion-safe:animate-float inline-flex h-12 w-12 items-center justify-center rounded-2xl border-b-8 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) [animation-delay:200ms]'>
+                  {icon}
+                </span>
+                <h1 className='text-4xl font-bold text-(--main-color)'>
+                  {title}
+                </h1>
+              </div>
+              {lastUpdated && (
+                <p className='text-sm text-(--secondary-color)/70'>
+                  Last Updated: {lastUpdated}
+                </p>
+              )}
             </div>
           )}
           {children}

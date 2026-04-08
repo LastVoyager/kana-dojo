@@ -8,6 +8,7 @@ const SecurityPolicy = () => {
     <LegalLayout
       icon={<FileLock2 className='size-6' />}
       title='Security Policy'
+      lastUpdated='April 8, 2026'
     >
       <PostWrapper textContent={securityPolicy} />
     </LegalLayout>
