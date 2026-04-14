@@ -722,7 +722,7 @@
   {
     "id": 121,
     "fact": "The concept of 'sumimasen' (すみません) combines 'sorry' and 'thank you' - acknowledging that someone went out of their way.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -890,7 +890,7 @@
   {
     "id": 149,
     "fact": "The word 'shiawase' (幸せ) for happiness originally meant 'what happens' - suggesting happiness is accepting what comes.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1490,7 +1490,7 @@
   {
     "id": 249,
     "fact": "Japan’s traditional nighttime street games are called 'yomise' — pop-up stalls offering goldfish scooping, darts, and sweets.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

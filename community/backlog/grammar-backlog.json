@@ -170,7 +170,7 @@
   {
     "id": 29,
     "text": "\"〜らしい\" can mean \"seems\" or describe a typical characteristic.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -742,7 +742,7 @@
   {
     "id": 124,
     "text": "\"〜かもしれない\" means \"might be\" or \"maybe\". (practice variation 39)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

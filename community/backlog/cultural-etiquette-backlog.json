@@ -50,7 +50,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 6,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -572,7 +572,7 @@
     "dont": "無言で食べ始める",
     "note": "感謝を示す慣習。",
     "id": 64,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -626,8 +626,10 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 70,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "armorbreak001",
+    "completedPR": 13163
   },
   {
     "situation": "贈り物 4",
@@ -905,7 +907,7 @@
     "dont": "片手で受け取ってすぐポケットに入れる",
     "note": "商談中は机上に置くのが一般的。",
     "id": 101,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

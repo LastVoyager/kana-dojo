@@ -646,7 +646,7 @@
     "english": "I'm on a different level today! (alt wording 13)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1228,7 +1228,7 @@
     "english": "What?! (alt wording 19) (alt wording 71)",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1318,7 +1318,7 @@
     "english": "Fosh fosh fosh fosh. (alt wording 28) (alt wording 80)",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
